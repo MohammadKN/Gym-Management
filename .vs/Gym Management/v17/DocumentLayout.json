@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\Gym Management\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E1EB0A88-87B1-4F3F-B244-237B2A4E6ABA}|Gym Management\\Gym Management.vcxproj|C:\\Users\\User\\source\\repos\\Gym Management\\Gym Management\\Gym Management.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1EB0A88-87B1-4F3F-B244-237B2A4E6ABA}|Gym Management\\Gym Management.vcxproj|solutionrelative:Gym Management\\Gym Management.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Gym Management.cpp",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Gym Management\\Gym Management\\Gym Management.cpp",
+              "RelativeDocumentMoniker": "Gym Management\\Gym Management.cpp",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Gym Management\\Gym Management\\Gym Management.cpp",
+              "RelativeToolTip": "Gym Management\\Gym Management.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-10T18:53:54.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
