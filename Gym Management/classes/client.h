@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 class client
 {
 private:
@@ -15,10 +16,10 @@ public:
         this->age = age;
         this->phoneNumber = phoneNumber;
     };
-    void markitplace();
-    void Authenticate();
-    void accessDiteSupplement();
-    void accessTschedules();
+    void marketplace();
+    void authenticate();
+    void accessDietSupplement();
+    void accessSchedules();
     void communicate();
 
 };
