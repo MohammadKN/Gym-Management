@@ -1,17 +1,18 @@
 
 #include <iostream>
 using namespace std;
-class linkedList {
-private:
-	struct Node {
+struct Node {
 		int item;
 		Node* next;
 	};
-	struct DNode {
-		int item;
-		DNode* next;
-		DNode* prev;
-	};
+struct DNode {
+	int item;
+	DNode* next;
+	DNode* prev;
+};
+
+class linkedList {
+private:
 	Node* head;
 	DNode* Dhead;
 public:

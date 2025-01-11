@@ -1,14 +1,16 @@
 #include <iostream>
+#include "linkedList.cpp"
 
 using namespace std;
 
-void search(Node* head,int target) {
+bool search(Node* head,int target) {
 
-	node* current = head;
+	Node* current = head;
 	while (current != NULL) {
-		if (current = target) {
+		if (current->item == target) {
 			cout << target << "is in linked list";
-			break
+			return true;
+			break;
 		}
 		else {
 			cout << target << "is not in linked list";
@@ -16,14 +18,15 @@ void search(Node* head,int target) {
 		}
 		current = current->next;
 	}
+	return false;
+}
 
-
-	void bSearch(int bottom,int top,int mid,int bTarget,int arr[]) {
+	int bSearch(int bottom,int top,int mid,int bTarget,int arr[]) {
 
 		bool found = 0;
 
 		while (found == 0 && bottom <= top) {
-			mid = (top+bottom)/2
+			mid = (top+bottom)/2;
 				if (bTarget == arr[mid]) {
 					found = 1;
 					return mid;
@@ -32,7 +35,7 @@ void search(Node* head,int target) {
 					if (bTarget < arr[mid]) {
 						top = mid - 1;
 					}
-					  else(bTarget > arr[mid]) {
+					  else {
 						bottom = mid + 1;
 					  }
 						
@@ -43,18 +46,4 @@ void search(Node* head,int target) {
 		if (!found) {
 			cout << "Target not found";
 		}
-			
-		
-		
-
-
-}
-		
-		
-		
-	
-
-
-
-
-}
+	}
