@@ -1,6 +1,7 @@
 #pragma once
-
 #include <string>
+#include "Message.h"
+#include "Schedule.h"
 using namespace std;
 
 class Trainer {
@@ -13,11 +14,8 @@ private:
     string phoneNumber;
 
 public:
-
     void setTrainerDetails(int id, string name, int age, int exp, string ach, string phone);
     void displayTrainerDetails();
-    void createTrainingSchedule();
-    void communicateWithClient(string clientName);
-    void trackClientProgress(string clientName);
+    void createTrainingSchedule(Schedule schedule);
+    void sendMessage(Message message);
 };
-

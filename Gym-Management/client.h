@@ -1,5 +1,6 @@
 #pragma once
-
+#include "Message.h"
+#include "Schedule.h"
 #include <iostream>
 using namespace std;
 
@@ -23,7 +24,8 @@ public:
     void accessDietSupplement();
     void accessSchedules();
     void communicate();
-
+    void receiveMessage(Message message);
+    void accessSchedule(Schedule schedule);
 };
 
 

@@ -127,17 +127,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="client.cpp" />
     <ClCompile Include="graphs.cpp" />
     <ClCompile Include="infixPostfix.cpp" />
     <ClCompile Include="linkedList.cpp" />
+    <ClCompile Include="Message.cpp" />
+    <ClCompile Include="Schedule.cpp" />
     <ClCompile Include="search.cpp" />
     <ClCompile Include="searchTree.cpp" />
     <ClCompile Include="stackQueue.cpp" />
     <ClCompile Include="Gym-Management.cpp" />
+    <ClCompile Include="Trainer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="client.h" />
+    <ClInclude Include="Message.h" />
     <ClInclude Include="NutritionSpecialist.h" />
+    <ClInclude Include="Schedule.h" />
     <ClInclude Include="Trainer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
