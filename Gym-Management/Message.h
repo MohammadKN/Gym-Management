@@ -7,12 +7,12 @@ class Message {
 private:
     string date;
     string text;
-    int trainerID;
-    int clientID;
+    int from;
+    int to;
 
 public:
-    Message(string date, string text, int trainerID, int clientID);
+    Message(string date, string text, int from, int to);
     void displayMessage();
-    int getTrainerID();
-    int getClientID();
+    int send();
+    int checkMessages();
 };

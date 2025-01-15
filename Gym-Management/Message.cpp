@@ -6,24 +6,25 @@ Message::Message(string date, string text, int trainerID, int clientID)
 {
     this->date = date;
     this->text = text;
-    this->trainerID = trainerID;
-    this->clientID = clientID;
+    this->to = to;
+    this->from = from;
+
 }
 
 void Message::displayMessage()
 {
     cout << "Date: " << date << endl;
     cout << "Message: " << text << endl;
-    cout << "Trainer ID: " << trainerID << endl;
-    cout << "Client ID: " << clientID << endl;
+    cout << "to: " << to << endl;
+    cout << "from: " << from << endl;
 }
 
-int Message::getTrainerID() 
+int Message::send() 
 {
-    return trainerID;
+    return to;
 }
 
-int Message::getClientID()
+int Message::checkMessages()
 {
-    return clientID;
+    return from;
 }
