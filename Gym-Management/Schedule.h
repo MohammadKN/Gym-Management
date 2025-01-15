@@ -7,13 +7,13 @@ private:
     int trainerID;
     int clientID;
     int days;
-    string training_type;
+    string trainingType;
     string exercises;
     int duration;
-    int rest_days;
+    int restDays;
 
 public:
-    Schedule(int trainerID, int clientID, int days, string training_type, string exercises, int duration, int rest_days);
+    Schedule(int trainerID, int clientID, int days, string trainingType, string exercises, int duration, int restDays);
     void displaySchedule();
     int getTrainerID();
     int getClientID();
