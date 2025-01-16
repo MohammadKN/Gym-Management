@@ -194,6 +194,7 @@ bool registerMenu() {
 
 
 int main() {
+	
     int choice;
     do {
         showAuth();
