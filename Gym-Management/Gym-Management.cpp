@@ -196,6 +196,17 @@ bool registerMenu() {
 int main() {
 	
     int choice;
+	int hashTable[MAX];
+	initializeTable(hashTable);
+
+	// Insert values
+	int values[] = { 15, 25, 35, 20, 30, 40 };
+	for (int id : values) {
+		hashing(hashTable, id);
+	}
+
+	// Display final hash table
+	display(hashTable);
     do {
         showAuth();
         cin >> choice;

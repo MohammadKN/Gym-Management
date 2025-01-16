@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="client.cpp" />
     <ClCompile Include="graphs.cpp" />
+    <ClCompile Include="hash.cpp" />
     <ClCompile Include="infixPostfix.cpp" />
     <ClCompile Include="linkedList.cpp" />
     <ClCompile Include="Message.cpp" />

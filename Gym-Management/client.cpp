@@ -1,5 +1,6 @@
 #include "client.h"
 #include "Trainer.h"
+#include"Schedule.h"
 
 void client::receiveMessage(Message message)
 {
