@@ -47,35 +47,6 @@ void showAuth() {
     cout << "Enter your choice: ";
 }
 
-bool loginMenu() {
-	string username, password;
-	cout << "Enter username: ";
-	cin >> username;
-	cout << "Enter password: ";
-	cin >> password;
-	cout << "1. Client\n";
-	cout << "2. Trainer\n";
-	cout << "3. Nutrition Specialist\n";
-	cout << "Enter your choice: ";
-	int accountType;
-	cin >> accountType;
-	loadUsers();
-	if (clients.find(username) != clients.end() && clients[username] == password) {
-		cout << "Login successful!\n";
-		if (username == "Client") {
-			showClientMenu(username);
-		} else if (username == "Trainer") {
-			showTrainerMenu(username);
-		} else if (username == "Nutrition") {
-			showNutritionSpecialistMenu(username);
-		}
-		return true;
-	} else {
-		cout << "Invalid username or password. Try again.\n";
-		return false;
-	}
-}
-
 map<string, string> clients;
 map<string, string> trainers;
 map<string, string> nutritionSpecialists;
@@ -119,6 +90,36 @@ void saveUsers() {
 		outfile << user.first << " " << user.second << endl;
 	}
 	outfile.close();
+}
+
+
+bool loginMenu() {
+	string username, password;
+	cout << "Enter username: ";
+	cin >> username;
+	cout << "Enter password: ";
+	cin >> password;
+	cout << "1. Client\n";
+	cout << "2. Trainer\n";
+	cout << "3. Nutrition Specialist\n";
+	cout << "Enter your choice: ";
+	int accountType;
+	cin >> accountType;
+	loadUsers();
+	if (clients.find(username) != clients.end() && clients[username] == password) {
+		cout << "Login successful!\n";
+		if (username == "Client") {
+			showClientMenu(username);
+		} else if (username == "Trainer") {
+			showTrainerMenu(username);
+		} else if (username == "Nutrition") {
+			showNutritionSpecialistMenu(username);
+		}
+		return true;
+	} else {
+		cout << "Invalid username or password. Try again.\n";
+		return false;
+	}
 }
 
 

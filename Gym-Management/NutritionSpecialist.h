@@ -42,18 +42,3 @@ public:
 };
 
 
-int main() {
-
-    NutritionSpecialist specialist(
-        "NS101", "Dr. Faris Hijazi", 35, 10, "Awarded Best Nutritionist 2023", "123-456-7890");
-
-
-
-    specialist.displayDetails();
-
-
-    specialist.createNutritionPlan();
-    specialist.communicateWithTrainer();
-
-    return 0;
-}
