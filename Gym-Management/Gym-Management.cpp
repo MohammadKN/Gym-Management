@@ -8,6 +8,7 @@
 #include "classes/nutritionSpecialist.h"
 #include "Schedule.h"
 #include "stackQueue.cpp"
+#include "hash.cpp"
 
 
 using namespace std;
@@ -198,6 +199,17 @@ bool registerMenu() {
 
 int main() {
     int choice;
+	int hashTable[MAX];
+	initializeTable(hashTable);
+
+	// Insert values
+	int values[] = { 15, 25, 35, 20, 30, 40 };
+	for (int id : values) {
+		hashing(hashTable, id);
+	}
+
+	// Display final hash table
+	display(hashTable);
     do {
         showAuth();
         cin >> choice;
