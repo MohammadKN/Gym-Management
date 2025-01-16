@@ -5,7 +5,7 @@
 #include "classes/trainer.h"
 #include "classes/nutritionSpecialist.h"
 #include "Schedule.h"
-#include"hash.cpp"
+#include "hashr.h"
 
 
 using namespace std;
@@ -32,7 +32,7 @@ void showClientMenu(string username) {
 
 			break;
 		case 2:
-			//registerMenu();
+			
 			break;
 		case 3:
 			cout << "Exiting...\n";
@@ -197,17 +197,14 @@ bool registerMenu() {
 int main() {
 	
     int choice;
-	int hashTable[MAX];
-	initializeTable(hashTable);
+	int table[MAX];
+	initializeTable(table);
 
-	// Insert values
-	int values[] = { 15, 25, 35, 20, 30, 40 };
-	for (int id : values) {
-		hashing(hashTable, id);
-	}
+	hashings(table, 5);
+	hashings(table, 15);
+	hashings(table, 25);
 
-	// Display final hash table
-	display(hashTable);
+	displays(table);
     do {
         showAuth();
         cin >> choice;

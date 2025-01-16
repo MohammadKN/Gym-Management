@@ -129,7 +129,7 @@
   <ItemGroup>
     <ClCompile Include="client.cpp" />
     <ClCompile Include="graphs.cpp" />
-    <ClCompile Include="hash.cpp" />
+    <ClCompile Include="hashtb.cpp" />
     <ClCompile Include="infixPostfix.cpp" />
     <ClCompile Include="linkedList.cpp" />
     <ClCompile Include="Message.cpp" />
@@ -142,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="client.h" />
+    <ClInclude Include="Hashr.h" />
     <ClInclude Include="Message.h" />
     <ClInclude Include="NutritionSpecialist.h" />
     <ClInclude Include="Schedule.h" />
