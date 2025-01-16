@@ -50,8 +50,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Hashr.h",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\gg\\Gym-Management\\Hashr.h",
+              "RelativeDocumentMoniker": "Gym-Management\\Hashr.h",
+              "ToolTip": "C:\\Users\\User\\Desktop\\gg\\Gym-Management\\Hashr.h*",
+              "RelativeToolTip": "Gym-Management\\Hashr.h*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-16T19:24:30.822Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
