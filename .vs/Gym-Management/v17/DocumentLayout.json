@@ -60,7 +60,7 @@
               "RelativeDocumentMoniker": "Gym-Management\\Gym-Management.cpp",
               "ToolTip": "D:\\projects\\Gym-Management\\Gym-Management\\Gym-Management.cpp*",
               "RelativeToolTip": "Gym-Management\\Gym-Management.cpp*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-16T16:45:34.895Z",
               "IsPinned": true,
@@ -80,7 +80,8 @@
               "RelativeToolTip": "Gym-Management\\graphs.cpp",
               "ViewState": "AgIAABsAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-16T18:58:43.784Z"
+              "WhenOpened": "2025-01-16T18:58:43.784Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
