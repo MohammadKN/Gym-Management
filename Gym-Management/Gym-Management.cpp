@@ -1,95 +1,24 @@
 #include <iostream>
 #include <fstream>
 #include <map>
-#include <stdlib.h>
-
+#include "classes/client.h"
+#include "classes/trainer.h"
+#include "classes/nutritionSpecialist.h"
+#include "Schedule.h"
 
 using namespace std;
 
-class Schedule {
-private:
-    int trainerID;
-    int clientID;
-    int days;
-    string trainingType;
-    string exercises;
-    int duration;
-    int restDays;
-
-public:
-    Schedule(int trainerID, int clientID, int days, string trainingType, string exercises, int duration, int restDays);
-    void displaySchedule();
-    int getTrainerID();
-    int getClientID();
-};
-
-
-Schedule::Schedule(int trainerID, int clientID, int days, string trainingType, string exercises, int duration, int restDays)
-{
-    this->trainerID = trainerID;
-    this->clientID = clientID;
-    this->days = days;
-    this->trainingType = trainingType;
-    this->exercises = exercises;
-    this->duration = duration;
-    this->restDays = restDays;
-}
-
-void Schedule::displaySchedule() 
-{
-    cout << "Trainer ID: " << trainerID << endl;
-    cout << "Client ID: " << clientID << endl;
-    cout << "Days: " << days << endl;
-    cout << "Training Type: " << trainingType << endl;
-    cout << "Exercises: " << exercises << endl;
-    cout << "Duration: " << duration << " minutes" << endl;
-    cout << "Rest Days: " << restDays << endl;
-}
-
-int Schedule::getTrainerID()
-{
-    return trainerID;
-}
-
-int Schedule::getClientID()
-{
-    return clientID;
-}
 void showClientMenu(string username) {
-    int choice;
-            
-    do {
-        
-            system("cls");
-        cout << "Gym Management System\n";
-        cout << "Hello "<< username << "How Was Your Day" << endl;
-        cout << "1. Access Schedule\n";
-        cout << "2. Communicate with Trainer\n";
-        cout << "3. Communicate with Nutrition Specialist\n";
-    	cout << "4. Logout\n";
-        cout << "5. Exit\n";
-        cout << "Enter your choice: ";
-        Schedule s(0,1,3,"hello","hi",2,5);
-        cin >> choice;
-        switch (choice) {
-            case 1: 
-                
-                s.displaySchedule();
-            break;
-            case 2:
-                //registerMenu();
-            break;
-            case 3: 
-                cout << "Exiting...\n"; 
-            break;
-            default: 
-                cout << "Invalid choice. Try again.\n";
-        }
-    } while (choice != 3);
-	
+	cout << "Gym Management System\n";
+	cout << "Hello "<< username << "How Was Your Day" << endl;
+    cout << "1. Access Schedule\n";
+    cout << "2. Communicate with Trainer\n";
+    cout << "3. Communicate with Nutrition Specialist\n";
+	cout << "4. Logout\n";
+    cout << "5. Exit\n";
+    cout << "Enter your choice: ";
 }
 void showTrainerMenu(string username) {
-            system("cls");
 	cout << "Gym Management System\n";
 	cout << "Hello "<< username << "How Was Your Day" << endl;
     cout << "1. Manage Schedules\n";
@@ -100,8 +29,6 @@ void showTrainerMenu(string username) {
 }
 
 void showNutritionSpecialistMenu(string username) {
-    
-            system("cls");
 	cout << "Gym Management System\n";
 	cout << "Hello "<< username << "How Was Your Day" << endl;
 	cout << "1. Create a Diet Plan\n";
@@ -113,7 +40,6 @@ void showNutritionSpecialistMenu(string username) {
 }
 
 void showAuth() {
-            system("cls");
 	cout << "Gym Management System\n";
     cout << "1. Login\n";
     cout << "2. Register\n";
@@ -169,7 +95,6 @@ void saveUsers() {
 
 bool loginMenu() {
 	string username, password;
-    system("cls");
 	cout << "Enter username: ";
 	cin >> username;
 	cout << "Enter password: ";
@@ -200,7 +125,6 @@ bool loginMenu() {
 
 bool registerMenu() {
 	string username, password;
-	system("cls");
 	cout << "Enter a new username: ";
 	cin >> username;
 	cout << "Enter a new password: ";
@@ -241,16 +165,11 @@ bool registerMenu() {
 int main() {
     int choice;
     do {
-        
-            system("cls");
         showAuth();
         cin >> choice;
         switch (choice) {
-            case 1: if (!loginMenu()) {showAuth(); system("CLS");} break;
-            case 2: 
-                registerMenu();
-    
-                system("cls");break;
+            case 1: if (!loginMenu()) showAuth(); break;
+            case 2: registerMenu(); break;
             case 3: cout << "Exiting...\n"; break;
             default: cout << "Invalid choice. Try again.\n";
         }
@@ -258,4 +177,3 @@ int main() {
 
     return 0;
 }
-
