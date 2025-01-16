@@ -1,11 +1,14 @@
 #include <iostream>
 #include <fstream>
 #include <map>
+#include <stdlib.h>
+#include <string>
 #include "classes/client.h"
 #include "classes/trainer.h"
 #include "classes/nutritionSpecialist.h"
 #include "Schedule.h"
-#include <stdlib.h>
+#include "stackQueue.cpp"
+
 
 using namespace std;
 
@@ -15,7 +18,7 @@ void showClientMenu(string username) {
 	do {
 		cout << "Gym Management System\n";
 		cout << "Hello " << username << " How Was Your Day" << endl;
-		cout << "1. Access Schedule\n";
+		cout << "1. Access Schedule\n";p
 		cout << "2. Communicate with Trainer\n";
 		cout << "3. Communicate with Nutrition Specialist\n";
 		cout << "4. Logout\n";
@@ -31,7 +34,7 @@ void showClientMenu(string username) {
 
 			break;
 		case 2:
-			//registerMenu();
+			
 			break;
 		case 3:
 			cout << "Exiting...\n";
@@ -206,6 +209,7 @@ int main() {
             default: cout << "Invalid choice. Try again.\n";
         }
     } while (choice != 3);
-
+	
+	
     return 0;
 }
