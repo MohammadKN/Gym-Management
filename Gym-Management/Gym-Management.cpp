@@ -5,6 +5,7 @@
 #include "classes/trainer.h"
 #include "classes/nutritionSpecialist.h"
 #include "Schedule.h"
+#include"hash.cpp"
 
 
 using namespace std;
