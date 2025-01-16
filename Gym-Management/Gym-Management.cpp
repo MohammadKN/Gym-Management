@@ -5,8 +5,7 @@
 #include "classes/trainer.h"
 #include "classes/nutritionSpecialist.h"
 #include "Schedule.h"
-#include"hash.cpp"
-
+#include "hash.cpp"
 
 using namespace std;
 
@@ -64,14 +63,6 @@ void showNutritionSpecialistMenu(string username) {
     cout << "Enter your choice: ";
 }
 
-void showAuth() {
-	system("cls");
-	cout << "Gym Management System\n";
-    cout << "1. Login\n";
-    cout << "2. Register\n";
-    cout << "3. Exit\n";
-    cout << "Enter your choice: ";
-}
 
 map<string, string> clients;
 map<string, string> trainers;
