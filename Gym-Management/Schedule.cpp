@@ -7,10 +7,10 @@ Schedule::Schedule(int trainerID, int clientID, int days, string trainingType, s
     this->trainerID = trainerID;
     this->clientID = clientID;
     this->days = days;
-    this->training_type = trainingType;
+    this->trainingType = trainingType;
     this->exercises = exercises;
     this->duration = duration;
-    this->rest_days = rest_days;
+    this->restDays = restDays;
 }
 
 void Schedule::displaySchedule() 
@@ -18,10 +18,14 @@ void Schedule::displaySchedule()
     cout << "Trainer ID: " << trainerID << endl;
     cout << "Client ID: " << clientID << endl;
     cout << "Days: " << days << endl;
-    cout << "Training Type: " << training_type << endl;
+    cout << "Training Type: " << trainingType << endl;
     cout << "Exercises: " << exercises << endl;
     cout << "Duration: " << duration << " minutes" << endl;
-    cout << "Rest Days: " << rest_days << endl;
+    cout << "Rest Days: " << restDays << endl;
+    cout << "Enter anything to get Back"<<endl;
+    string x;
+	cin >> x;
+
 }
 
 int Schedule::getTrainerID()

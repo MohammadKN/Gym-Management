@@ -5,22 +5,46 @@
 #include "classes/trainer.h"
 #include "classes/nutritionSpecialist.h"
 #include "Schedule.h"
+#include <stdlib.h>
 
 using namespace std;
 
 void showClientMenu(string username) {
-	cout << "Gym Management System\n";
-	cout << "Hello "<< username << "How Was Your Day" << endl;
-    cout << "1. Access Schedule\n";
-    cout << "2. Communicate with Trainer\n";
-    cout << "3. Communicate with Nutrition Specialist\n";
-	cout << "4. Logout\n";
-    cout << "5. Exit\n";
-    cout << "Enter your choice: ";
+	int choice;
+
+	do {
+		cout << "Gym Management System\n";
+		cout << "Hello " << username << " How Was Your Day" << endl;
+		cout << "1. Access Schedule\n";
+		cout << "2. Communicate with Trainer\n";
+		cout << "3. Communicate with Nutrition Specialist\n";
+		cout << "4. Logout\n";
+		cout << "5. Exit\n";
+		cout << "Enter your choice: ";
+		Schedule s(0, 1, 3, "hello", "hi", 2, 5);
+		cin >> choice;
+		switch (choice) {
+		case 1:
+			system("cls");
+			s.displaySchedule();
+			system("cls");
+
+			break;
+		case 2:
+			//registerMenu();
+			break;
+		case 3:
+			cout << "Exiting...\n";
+			break;
+		default:
+			cout << "Invalid choice. Try again.\n";
+		}
+	} while (choice != 3);
+
 }
 void showTrainerMenu(string username) {
 	cout << "Gym Management System\n";
-	cout << "Hello "<< username << "How Was Your Day" << endl;
+	cout << "Hello "<< username << " How Was Your Day" << endl;
     cout << "1. Manage Schedules\n";
     cout << "2. Communicate with a Client\n";
 	cout << "3. Logout\n";
@@ -30,7 +54,7 @@ void showTrainerMenu(string username) {
 
 void showNutritionSpecialistMenu(string username) {
 	cout << "Gym Management System\n";
-	cout << "Hello "<< username << "How Was Your Day" << endl;
+	cout << "Hello "<< username << " How Was Your Day" << endl;
 	cout << "1. Create a Diet Plan\n";
     cout << "1. Manage Clients' Diet Plans\n";
     cout << "2. Communicate with a Client\n";
@@ -40,6 +64,7 @@ void showNutritionSpecialistMenu(string username) {
 }
 
 void showAuth() {
+	system("cls");
 	cout << "Gym Management System\n";
     cout << "1. Login\n";
     cout << "2. Register\n";
@@ -97,14 +122,17 @@ bool loginMenu() {
 	string username, password;
 	cout << "Enter username: ";
 	cin >> username;
+	system("cls");
 	cout << "Enter password: ";
 	cin >> password;
+	system("cls");
 	cout << "1. Client\n";
 	cout << "2. Trainer\n";
 	cout << "3. Nutrition Specialist\n";
 	cout << "Enter your choice: ";
 	int accountType;
 	cin >> accountType;
+	system("cls");
 	loadUsers();
 	if (clients.find(username) != clients.end() && clients[username] == password) {
 		cout << "Login successful!\n";
@@ -127,8 +155,10 @@ bool registerMenu() {
 	string username, password;
 	cout << "Enter a new username: ";
 	cin >> username;
+	system("cls");
 	cout << "Enter a new password: ";
 	cin >> password;
+	system("cls");
 	cout << "Which Type of Account You Want To Create\n";
 	cout << "1. Client\n";
 	cout << "2. Trainer\n";
@@ -136,6 +166,7 @@ bool registerMenu() {
 	cout << "Enter your choice: ";
 	int accountType;
 	cin >> accountType;
+	system("cls");
 	switch (accountType) {
 		case 1:
 			cout << "Client account created.\n";
@@ -167,6 +198,7 @@ int main() {
     do {
         showAuth();
         cin >> choice;
+		system("cls");
         switch (choice) {
             case 1: if (!loginMenu()) showAuth(); break;
             case 2: registerMenu(); break;

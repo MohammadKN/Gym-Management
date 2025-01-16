@@ -3,7 +3,7 @@
 
 void client::receiveMessage(Message message)
 {
-    cout << "Message received from Trainer ID: " << message.getTrainerID() << endl;
+    cout << "Message received from Trainer ID: " << message.checkMessages() << endl;
     message.displayMessage();
 }
 

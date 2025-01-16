@@ -29,6 +29,6 @@ void Trainer::createTrainingSchedule(Schedule schedule)
 
 void Trainer::sendMessage(Message message) 
 {
-    cout << "Message sent to Client ID: " << message.getClientID() << endl;
+    cout << "Message sent to Client ID: " << message.send() << endl;
     message.displayMessage();
 }
