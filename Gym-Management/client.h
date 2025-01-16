@@ -16,8 +16,6 @@ private:
     int id;
     string fullname;
     int TrainerId;
-	Message message;
-	Schedule schedule;
     int age;
     string phoneNumber;  // Changed phoneNumber to string
     market cart[10]; // Fixed-size array for storing purchased items
@@ -34,6 +32,7 @@ public:
 
         cartSize = 0; // Initialize cart size to 0
     }
+
     // Marketplace method to display menu
     void marketplace();
 
@@ -46,6 +45,6 @@ public:
     void accessDietSupplement() { cout << "Diet Supplement feature coming soon!\n"; }
     void accessSchedules() { cout << "Schedules feature coming soon!\n"; }
     void communicate() { cout << "Communication feature coming soon!\n"; }
-    void accessSchedule();
+    void accessSchedule(Schedule schedule);
     void receiveMessage(Message message);
 };
