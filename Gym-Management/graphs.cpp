@@ -20,7 +20,7 @@ Graph::Graph(int vertices) {
 
 void Graph::addEdge(int v, int w) {
     adjList[v].push_back(w);
-    adjList[w].push_back(v); // For undirected graph
+    adjList[w].push_back(v); 
 }
 
 void Graph::printGraph() {

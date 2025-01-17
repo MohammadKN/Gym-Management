@@ -1,5 +1,4 @@
 #pragma once
-
 #include <iostream>
 #include <string>
 
@@ -14,31 +13,20 @@ public:
     int experience;
     string achievements;
     string phoneNumber;
+    string clientName;
+    string dietPlan;
 
 
-    NutritionSpecialist(string id, string fullName, int age, int experience, string achievements, string phoneNumber)
-        : id(id), fullName(fullName), age(age), experience(experience), achievements(achievements), phoneNumber(phoneNumber) {
-    }
+    NutritionSpecialist(string id, string fullName, int age, int experience, string achievements, string phoneNumber);
 
 
-    void createNutritionPlan() {
-        //prototype
-    }
+    void createNutritionPlan(string clientName, string goal, string dietaryRestrictions);
 
-    void communicateWithTrainer() {
-        //prototype
-    }
+    void displayClientPlan();
+
+    void displayDetails();
+
+    void Goal();
 
 
-    void displayDetails() {
-        cout << "Nutrition Specialist Details:" << endl;
-        cout << "ID: " << id << endl;
-        cout << "Full Name: " << fullName << endl;
-        cout << "Age: " << age << endl;
-        cout << "Experience: " << experience << " years" << endl;
-        cout << "Achievements: " << achievements << endl;
-        cout << "Phone Number: " << phoneNumber << endl;
-    }
 };
-
-

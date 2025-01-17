@@ -1,19 +1,20 @@
-#include "client.h"
-#include "Trainer.h"
-#include"Schedule.h"
+#include "Client.h"
 
-void client::receiveMessage(Message message)
+
+void Client::accessDiet()
 {
-    cout << "Message received from Trainer ID: " << message.checkMessages() << endl;
-    message.displayMessage();
+    NutritionSpecialist NS("NS1", "John Doe", 30, 5, "Best Nutritionist Award","");
+	cout << "Accessing schedule created by Nutrition Specialist: " ; 
+	NS.displayClientPlan() ;
+
 }
-
-void client::accessSchedule(Schedule schedule)
+void Client::accessSchedule(Schedule schedule)
 {
+	
     cout << "Accessing schedule created by Trainer ID: " << schedule.getTrainerID() << endl;
     schedule.displaySchedule();
 }
-void client::marketplace()
+void Client::marketplace()
     {
         cout << "Welcome to the Market!\n";
 
@@ -35,7 +36,7 @@ void client::marketplace()
             cout << endl;
         }
     } 
-void client::buy() {
+void Client::buy() {
     string name;
     char size;
     float price = 0;
@@ -88,7 +89,7 @@ void client::buy() {
 
     printBill(); // Call billing function after shopping
 }
-void client::printBill() {
+void Client::printBill() {
     if (cartSize == 0) {
         cout << "Your cart is empty. No items to bill.\n";
         return;

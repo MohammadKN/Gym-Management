@@ -1,29 +1,29 @@
-// hash.cpp
-#include <iostream>
-#include "hashr.h"
-using namespace std;
+#include"Hashr.h"
 
-void initializeTable(int table[]) {
-    for (int i = 0; i < MAX; i++) {
-        table[i] = EMPTY;
+
+int Hash(const string password) {
+    int hashv = 0;
+    for (char ch : password) {
+        hashv += ch; 
     }
+    return hashv % MAX;
 }
 
-void hashings(int table[], int id) {
-    int hashv = id % MAX;
-    while (table[hashv] != EMPTY) {
+void storePassword(string passtable[], const string password) {
+    int hashv = Hash(password);
+
+    while (passtable[hashv] != "") { 
         hashv = (hashv + 1) % MAX;
     }
-    table[hashv] = id;
+    passtable[hashv] = password; 
 }
 
-void displays(int table[]) {
-    cout << "Index | Value\n";
-    cout << "----------------\n";
+void displayTable(string table[]) {
+    cout << "Index | Password\n";
+    cout << "-----------------\n";
     for (int i = 0; i < MAX; i++) {
-        if (table[i] == EMPTY)
-            cout << "  " << i << "   |  EMPTY\n";
-        else
-            cout << "  " << i << "   |   " << table[i] << "\n";
+        if (table[i] != "")
+            cout << "  " << i << "   | " << table[i] << "\n";
     }
 }
+

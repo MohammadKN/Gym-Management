@@ -1,50 +1,52 @@
 #include <iostream>
 #include "Schedule.h"
-#include"Message.h"
+#include "Trainer.h"
+#include"NutritionSpecialist.h" 
+
 using namespace std;
 
-// Struct for the market items
+
 struct market {
     float price;
     string item;
     char size;
 };
 
-// Client class
-class client {
-private:
+class Client {
+public:
     int id;
-    string fullname;
+    string username;
     int TrainerId;
     int age;
-    string phoneNumber;  // Changed phoneNumber to string
-    market cart[10]; // Fixed-size array for storing purchased items
-    int cartSize; // Counter for items in the cart
+    string phoneNumber;
+    market cart[10]; 
+    int cartSize; 
 
-public:
-    // Constructor
-    client(int id, string fullname, int age, string phoneNumber , int TrainerId) {
+
+	
+    Client(int id, string username, int age, string phoneNumber , int c) {
         this->id = id;
-        this->fullname = fullname;
+        this->username = username;
         this->age = age;
         this->phoneNumber = phoneNumber;
         this->TrainerId = TrainerId; 
 
-        cartSize = 0; // Initialize cart size to 0
+        cartSize = 0; 
     }
-
-    // Marketplace method to display menu
+	Client() {
+		id = 0;
+		username = "";
+		age = 0;
+		phoneNumber = "";
+		TrainerId = 0;
+		cartSize = 0;
+	}
+    
     void marketplace();
 
-    // Buy method to allow users to purchase multiple items
+    
     void buy();
-    // Function to print the final bill with tax
     void printBill();
-    // Placeholder for other functions
-    void authenticate() { cout << "Authentication feature coming soon!\n"; }
-    void accessDietSupplement() { cout << "Diet Supplement feature coming soon!\n"; }
-    void accessSchedules() { cout << "Schedules feature coming soon!\n"; }
-    void communicate() { cout << "Communication feature coming soon!\n"; }
+    void accessDiet();
     void accessSchedule(Schedule schedule);
-    void receiveMessage(Message message);
 };

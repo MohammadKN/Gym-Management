@@ -1,6 +1,9 @@
+#pragma once
 
 #include <iostream>
+
 using namespace std;
+
 struct Node {
 	int item;
 	Node* next;
@@ -11,17 +14,21 @@ struct DNode {
 	DNode* prev;
 };
 
-class linkedList {
+class LinkedList {
 private:
 	Node* head;
 	DNode* Dhead;
 public:
-	linkedList(int headVal) {
+	LinkedList(int headVal) {
 		head = new Node;
 		Dhead = new DNode;
 		Dhead->item = headVal;
 		head->item = headVal;
 		head->next = NULL;
+	}
+	LinkedList() {
+		head = NULL;
+		Dhead = NULL;
 	}
 	bool isEmpty() {
 		if (head == NULL)

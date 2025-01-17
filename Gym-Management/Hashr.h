@@ -1,12 +1,16 @@
-#pragma once
-#ifndef HASH_H
-#define HASH_H
+#ifndef HASHR_H
+#define HASHR_H
+#include <iostream>
+#include <string>
 
-#define MAX 10
-#define EMPTY -1
+using namespace std;
 
-void initializeTable(int table[]);
-void hashings(int table[], int id);
-void displays(int table[]);
+#define MAX 100 
+
+
+int Hash(const string password);
+void storePassword(string table[], const string password);
+void displayTable(string table[]) ; 
 
 #endif
+

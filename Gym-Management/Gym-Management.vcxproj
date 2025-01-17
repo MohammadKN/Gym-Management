@@ -132,8 +132,8 @@
     <ClCompile Include="hashtb.cpp" />
     <ClCompile Include="infixPostfix.cpp" />
     <ClCompile Include="linkedList.cpp" />
-    <ClCompile Include="Message.cpp" />
-    <ClCompile Include="Schedule.cpp" />
+    <ClCompile Include="nutritionSpecialist.cpp" />
+    <ClCompile Include="schedule.cpp" />
     <ClCompile Include="search.cpp" />
     <ClCompile Include="searchTree.cpp" />
     <ClCompile Include="stackQueue.cpp" />
@@ -143,7 +143,6 @@
   <ItemGroup>
     <ClInclude Include="client.h" />
     <ClInclude Include="Hashr.h" />
-    <ClInclude Include="Message.h" />
     <ClInclude Include="NutritionSpecialist.h" />
     <ClInclude Include="Schedule.h" />
     <ClInclude Include="Trainer.h" />

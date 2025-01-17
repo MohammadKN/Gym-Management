@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Gym-Managment"
+    "\\Gym-Management",
+    "\\Gym-Management\\Gym-Management.dSYM\\Contents",
+    "\\Gym-Management\\Gym-Management.dSYM\\Contents\\Resources",
+    "\\Gym-Management\\Gym-Management.dSYM\\Contents\\Resources\\DWARF",
+    "\\Gym-Management\\Gym-Management.dSYM\\Contents\\Resources\\Relocations",
+    "\\Gym-Management\\Gym-Management.dSYM\\Contents\\Resources\\Relocations\\x86_64"
   ],
+  "SelectedNode": "\\Gym-Management.sln",
   "PreviewInSolutionExplorer": false
 }
