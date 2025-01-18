@@ -1,5 +1,6 @@
 #include <iostream>
 #include "linkedList.cpp"
+#include "Gym-Management.cpp"
 
 using namespace std;
 
@@ -21,10 +22,14 @@ bool search(Node* head, int target) {
 	return false;
 }
 
-int bSearch(int bottom, int top, int mid, int bTarget, int arr[]) {
+int bSearch(int bottom, int top, int mid, int bTarget, User* users[],int const userCount) {
+
+	int* arr = new int[userCount];
 
 	bool found = 0;
-
+	for (int i = 0; i < userCount; i++) {
+		arr[i] = users[i]->id; 
+	}
 	while (found == 0 && bottom <= top) {
 		mid = (top + bottom) / 2;
 		if (bTarget == arr[mid]) {

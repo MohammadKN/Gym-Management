@@ -404,6 +404,8 @@ bool registerMenu(User*& users, int& userCount) {
 		return false;
 	}
 	loggedIn = true;
+
+	
 }
 int main() {
 	int choice;
