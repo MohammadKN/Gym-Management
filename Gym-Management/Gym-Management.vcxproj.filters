@@ -21,12 +21,6 @@
     <ClCompile Include="linkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="infixPostfix.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="graphs.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="stackQueue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -45,7 +39,7 @@
     <ClCompile Include="client.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hashtb.cpp">
+    <ClCompile Include="hash.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="nutritionSpecialist.cpp">
@@ -65,7 +59,7 @@
     <ClInclude Include="Schedule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Hashr.h">
+    <ClInclude Include="Hash.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

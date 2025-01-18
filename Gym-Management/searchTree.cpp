@@ -53,6 +53,20 @@ private:
             inOrderTraversal(node->right);
         }
     }
+    void postOrderTraversal(TreeNode* node) const {
+        if (node) {
+            inOrderTraversal(node->left);
+            inOrderTraversal(node->right);
+            node->trainer->displayTrainerDetails();
+        }
+    }
+    void preOrderTraversal(TreeNode* node) const {
+        if (node) {
+            node->trainer->displayTrainerDetails();
+            inOrderTraversal(node->left);
+            inOrderTraversal(node->right);
+        }
+    }
 
 public:
     IDBinarySearchTree() : root(nullptr) {}

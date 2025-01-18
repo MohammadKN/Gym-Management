@@ -13,9 +13,9 @@ struct DNode {
 	DNode* next;
 	DNode* prev;
 };
-
 class LinkedList {
 private:
+
 	Node* head;
 	DNode* Dhead;
 public:
@@ -27,8 +27,11 @@ public:
 		head->next = NULL;
 	}
 	LinkedList() {
-		head = NULL;
-		Dhead = NULL;
+		head = new Node;
+		Dhead = new DNode;
+		Dhead->item = 0;
+		head->item = 0;
+		head->next = nullptr;
 	}
 	bool isEmpty() {
 		if (head == NULL)
@@ -187,3 +190,4 @@ public:
 		delete temp;
 	}
 };
+

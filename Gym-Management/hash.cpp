@@ -1,4 +1,4 @@
-#include"Hashr.h"
+#include"Hash.h"
 
 
 int Hash(const string password) {

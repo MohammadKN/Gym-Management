@@ -128,9 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="client.cpp" />
-    <ClCompile Include="graphs.cpp" />
-    <ClCompile Include="hashtb.cpp" />
-    <ClCompile Include="infixPostfix.cpp" />
+    <ClCompile Include="hash.cpp" />
     <ClCompile Include="linkedList.cpp" />
     <ClCompile Include="nutritionSpecialist.cpp" />
     <ClCompile Include="schedule.cpp" />
@@ -142,7 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="client.h" />
-    <ClInclude Include="Hashr.h" />
+    <ClInclude Include="Hash.h" />
     <ClInclude Include="NutritionSpecialist.h" />
     <ClInclude Include="Schedule.h" />
     <ClInclude Include="Trainer.h" />
