@@ -1,29 +1,27 @@
 #pragma once
-
+#include <map>
 #include <iostream>
 #include "Trainer.h"
 using namespace std;
 
-
-struct TreeNode {
-    Trainer* trainer;  
-    TreeNode* left;
-    TreeNode* right;
-
-    TreeNode(Trainer* trainer)
-        : trainer(trainer), left(nullptr), right(nullptr) {}
-};
-
-
 class IDBinarySearchTree {
 private:
+    struct TreeNode {
+        Trainer* trainer;
+        TreeNode* left;
+        TreeNode* right;
+
+        TreeNode(Trainer* trainer)
+            : trainer(trainer), left(nullptr), right(nullptr) {
+        }
+    };
+
     TreeNode* root;
 
     TreeNode* insertNode(TreeNode* node, Trainer* trainer) {
         if (node == nullptr) {
             return new TreeNode(trainer);
         }
-
         if (trainer->getTrainerID() < node->trainer->getTrainerID()) {
             node->left = insertNode(node->left, trainer);
         }
@@ -35,13 +33,12 @@ private:
 
     Trainer* searchNode(TreeNode* node, int id) const {
         if (node == nullptr) {
-            return nullptr;
+            return nullptr; // ?????? ??? ?????
         }
-
         if (id == node->trainer->getTrainerID()) {
-            return node->trainer;
+            return node->trainer; // ?????? ?????
         }
-        else if (id < node->trainer->getTrainerID()) {
+        if (id < node->trainer->getTrainerID()) {
             return searchNode(node->left, id);
         }
         else {
@@ -50,7 +47,7 @@ private:
     }
 
     void inOrderTraversal(TreeNode* node) const {
-        if (node != nullptr) {
+        if (node) {
             inOrderTraversal(node->left);
             node->trainer->displayTrainerDetails();
             inOrderTraversal(node->right);
@@ -69,8 +66,12 @@ public:
     }
 
     void displayTrainers() const {
-        cout << "Trainers in ascending order by ID:" << endl;
-        inOrderTraversal(root);
+        if (root == nullptr) {
+            cout << "No trainers available." << endl;
+        }
+        else {
+            cout << "Trainers (sorted by ID):" << endl;
+            inOrderTraversal(root);
+        }
     }
 };
-

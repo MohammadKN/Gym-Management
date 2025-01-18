@@ -8,6 +8,7 @@
 #include "Trainer.h"
 #include "client.h"
 #include "linkedlist.cpp"
+#include "searchTree.cpp"
 
 using namespace std;
 
@@ -92,81 +93,82 @@ void showUserMenu(string username,UserType userType) {
 			}
 		} while (choice != 6 && loggedIn);
 		break;
-	case TRAINER:
+	case TRAINER: {
+		IDBinarySearchTree trainerTree; 
+		int loggedIn = true;
 
 		do {
 			cout << "Gym Management System\n";
-			cout << "Hello " << username << " How Was Your Day" << endl;
-			cout << "1. Create a Schedule" << endl;
-			cout << "2. Logout\n";
+			cout << "Hello " << username << ", How Was Your Day?" << endl;
+			cout << "1. Add a Trainer" << endl;
+			cout << "2. Search for a Trainer by ID" << endl;
+			cout << "3. Display All Trainers" << endl;
+			cout << "4. Logout\n";
 			cout << "Enter your choice: ";
-
 			cin >> choice;
 
 			switch (choice) {
-			case 1:
+			case 1: {
 				system("cls");
+				int trainerID, age, experience;
+				string name, achievements, phone;
 
-				int trainerID, clientID, numWorkingDays, numRestDays, duration;
-
-
-				cout << "Enter trainer ID: ";
+				cout << "Enter Trainer ID: ";
 				cin >> trainerID;
-				cout << "Enter client ID: ";
-				cin >> clientID;
+				cout << "Enter Full Name: ";
+				cin.ignore();
+				getline(cin, name);
+				cout << "Enter Age: ";
+				cin >> age;
+				cout << "Enter Years of Experience: ";
+				cin >> experience;
+				cout << "Enter Achievements: ";
+				cin.ignore();
+				getline(cin, achievements);
+				cout << "Enter Phone Number: ";
+				cin >> phone;
 
+			
+				Trainer* newTrainer = new Trainer(trainerID, name, age, experience, achievements, phone, Schedule());
+				trainerTree.insertTrainer(newTrainer);
 
-				cout << "Enter number of working days (1-7): ";
-				cin >> numWorkingDays;
-				Day workingDays[7];
-				for (int i = 0; i < numWorkingDays; ++i) {
-					int day;
-					cout << "Enter working day " << i + 1 << " (0 for Sunday, 6 for Saturday): ";
-					cin >> day;
-					workingDays[i] = static_cast<Day>(day);
-				}
-
-
-				cout << "Enter number of exercises (up to 5): ";
-				
-				cin >> numExercises;
-				for (int i = 0; i < numExercises; ++i) {
-					cout << "Enter exercise " << i + 1 << ": ";
-					getline(cin, exercises[i]);
-				}
-
-
-				cout << "Enter duration in minutes: ";
-				cin >> duration;
-
-
-				cout << "Enter number of rest days (1-7): ";
-				cin >> numRestDays;
-				Day restDays[7];
-				for (int i = 0; i < numRestDays; ++i) {
-					int day;
-					cout << "Enter rest day " << i + 1 << " (0 for Sunday, 6 for Saturday): ";
-					cin >> day;
-					restDays[i] = static_cast<Day>(day);
-				}
-
-
-				schedule = Schedule(trainerID, clientID, workingDays, numWorkingDays, exercises, numExercises, duration, restDays, numRestDays);
-
-
-				schedule.displaySchedule();
-
-				system("cls");
+				cout << "Trainer added successfully!\n";
 				break;
-
-			case 2:
-				loggedIn = false;
-				system("cls");
-				break;
-
 			}
-		} while (choice != 3 && loggedIn);
+			case 2: {
+				system("cls");
+				int searchID;
+				cout << "Enter Trainer ID to search: ";
+				cin >> searchID;
+
+				Trainer* foundTrainer = trainerTree.searchTrainer(searchID);
+				if (foundTrainer) {
+					cout << "Trainer Found:\n";
+					foundTrainer->displayTrainerDetails();
+				}
+				else {
+					cout << "Trainer not found with ID: " << searchID << endl;
+				}
+				break;
+			}
+			case 3:
+				system("cls");
+				trainerTree.displayTrainers(); 
+				break;
+
+			case 4:
+				loggedIn = false; 
+				system("cls");
+				break;
+
+			default:
+				cout << "Invalid choice, try again!" << endl;
+			}
+		} while (choice != 4 && loggedIn);
+
 		break;
+	}
+
 		case NUTRITION_SPECIALIST:
 		do {
 			cout << "Gym Management System\n";

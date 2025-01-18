@@ -1,8 +1,11 @@
 #pragma once
-#include<iostream>
+
+#include <iostream>
 #include <string>
 #include "Schedule.h"
+
 using namespace std;
+
 class Trainer {
 private:
     int ID;
@@ -11,10 +14,10 @@ private:
     int experience;
     string achievements;
     string phoneNumber;
-    Schedule trainerSchedule; 
+    Schedule trainerSchedule;
 
 public:
-    Trainer();
+    Trainer(); 
     Trainer(int id, const string& name, int age, int exp, const string& ach, const string& phone, const Schedule& schedule);
 
     void setTrainerDetails(int id, const string& name, int age, int exp, const string& ach, const string& phone);
@@ -22,5 +25,5 @@ public:
     Schedule getTrainerSchedule() const;
 
     void displayTrainerDetails() const;
-    int getTrainerID();
+    int getTrainerID() const;
 };
