@@ -18,7 +18,14 @@ public:
 
 
     NutritionSpecialist(string id, string fullName, int age, int experience, string achievements, string phoneNumber);
-
+	NutritionSpecialist() {
+		id = "";
+		fullName = "";
+		age = 0;
+		experience = 0;
+		achievements = "";
+		phoneNumber = "";
+	}
 
     void createNutritionPlan(string clientName, string goal, string dietaryRestrictions);
 

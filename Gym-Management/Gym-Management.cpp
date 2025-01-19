@@ -7,27 +7,17 @@
 #include "hash.h"
 #include "Trainer.h"
 #include "client.h"
-#include "linkedlist.cpp"
+#include "User.h"
 #include "searchTree.cpp"
 #include "stackQueue.cpp"
-#include "graphs.cpp"
 
 using namespace std;
 
-LinkedList clientsID,clientsPassword;
-
-enum UserType { CLIENT, TRAINER, NUTRITION_SPECIALIST, ADMIN };
-struct User {
-	string username;
-	string password;
-	int id;
-	UserType accountType;
-};
-
-bool loggedIn = false;
+LinkedList linkedListUsers;
+Stack stackUsers;
+Queue queueUsers;
+IDBinarySearchTree bstUsers;
 User* activeUser;
-
-
 Client client;
 Trainer trainer;
 
@@ -54,36 +44,36 @@ void showUserMenu(User* users, int& userCount) {
 	
 
 	string message;
-
-	IDBinarySearchTree trainerTree;
-	bool loggedIn = true;
-	string table[MAX];
 	string exercises[5] = { "Push-ups", "Squats", "Plank", "Lunges", "Pull-ups" };
-	Schedule schedule(101, 202, workingDays, 3, exercises, 5, 60, restDays, 2);
-	NutritionSpecialist specialist("2114", "Faris hijazi", 35, 5, "best nuitrtion specialist award 2024", "07720582027");
+	Schedule schedule;
+	NutritionSpecialist specialist;
 
 	switch (activeUser->accountType) {
 	case CLIENT:
 		do {
+			system("cls");
 			cout << "Gym Management System\n";
 			cout << "Hello " << activeUser->username << " How Was Your Day" << endl;
 			cout << "1. Access Schedule\n";
 			cout << "2. Access Diet Plan\n";
 			cout << "3. Go To Marketplace\n";
-			cout << "4. Access Schedule \n";
-			cout << "5. Update Information\n";
-			cout<<  "6. Logout\n"; 
-			cout << "7. Exit\n";
+			cout << "4. Update Information\n";
+			cout<<  "5. Logout\n"; 
+			cout << "6. Exit\n";
 			cout << "Enter your choice: ";
 			cin >> choice;
 			switch (choice) {
 			case 1:
 				system("cls");
-				schedule.displaySchedule();
+				if (schedule.getClientID()) {
+					schedule.displaySchedule();
+				}
+				else {
+					cout << "No schedule found...\n";
+				}
 				system("cls");
 				break;
 			case 2:
-				loggedIn = false;
 				system("cls");
 				client.accessDiet(); 
 				break;
@@ -92,10 +82,8 @@ void showUserMenu(User* users, int& userCount) {
 				client.marketplace(); 
 				client.buy();
 				client.printBill();
-			case 4 :
-				system("cls");
-				client.accessSchedule(schedule);
-			case 5 : 
+				break;
+			case 4 : 
 				cout<<"Enter Your ID: ";
 				cin>>client.id;
 				cout<<"Enter Your Name: ";
@@ -106,59 +94,72 @@ void showUserMenu(User* users, int& userCount) {
 				cin>> client.phoneNumber ; 
 				cout<<"Enter your Trainer Id";
 				cin >> client.TrainerId;
-			case 6:
-				loggedIn = false;
+				break;
+			case 5:
 				system("cls");
 				break;
 			default:
 				cout << "Invalid choice. Try again.\n";
 			}
-		} while (choice != 7 && loggedIn);
+		} while (choice != 5);
 		break;
 	case TRAINER: {
 
 		do {
+			system("cls");
 			cout << "Gym Management System\n";
 			cout << "Hello " << activeUser->username << ", How Was Your Day?" << endl;
-			cout << "1. Add a Trainer" << endl;
+			cout << "1. Create Schedule\n";
 			cout << "2. Search for a Trainer by ID" << endl;
-			cout << "3. Display All Trainers" << endl;
-			cout << "4. Logout\n";
-			cout << "5. Exit\n";
+			cout << "3. Logout\n";
 			cout << "Enter your choice: ";
 			cin >> choice;
 
 			switch (choice) {
+			case 1: {
+				system("cls");
+				break;
+			}
 			case 2: {
 				system("cls");
 				int searchID;
-				cout << "Enter Trainer ID to search: ";
+				cout << "Enter User ID to search: ";
 				cin >> searchID;
 
-				Trainer* foundTrainer = trainerTree.searchTrainer(searchID);
-				if (foundTrainer) {
-					cout << "Trainer Found:\n";
-					foundTrainer->displayTrainerDetails();
+				int* foundUser = bstUsers.searchId(&searchID);
+				if (foundUser) {
+					cout << "User Found:\n";
+					cout<<*foundUser;
 				}
 				else {
-					cout << "Trainer not found with ID: " << searchID << endl;
+					cout << "User not found with ID: " << searchID << endl;
+				}
+			}
+			case 3: {
+				system("cls");
+				int searchID;
+				cout << "Enter User ID to search: ";
+				cin >> searchID;
+
+				int* foundUser = bstUsers.searchId(&searchID);
+				if (foundUser) {
+					cout << "User Found:\n";
+					cout<<foundUser<<endl;
+				}
+				else {
+					cout << "User not found with ID: " << searchID << endl;
 				}
 				break;
 			}
-			case 3:
-				system("cls");
-				trainerTree.displayTrainers(); 
-				break;
-
-			case 4:
-				loggedIn = false; 
+			case 5:
+				return;
 				system("cls");
 				break;
 
 			default:
 				cout << "Invalid choice, try again!" << endl;
 			}
-		} while (choice != 5 && loggedIn);
+		} while (choice != 5);
 
 		break;
 	}
@@ -166,12 +167,12 @@ void showUserMenu(User* users, int& userCount) {
 
 
 		do {
+			system("cls");
 			cout << "Gym Management System\n";
 			cout << "Hello " << activeUser->username << " How Was Your Day" << endl;
 			cout << "1. Create a Diet Plan\n";
 			cout << "2. Display Clients' Diet Plans\n";
 			cout << "3. Logout\n";
-			cout << "4. Exit\n";
 			cout << "Enter your choice: ";
 			cin >> choice;
 			switch (choice) {
@@ -196,146 +197,326 @@ void showUserMenu(User* users, int& userCount) {
 				break;
 
 			case 3:
-				loggedIn = false;
 				break;
 
 			default:
 				cout << "Invalid choice. Try again.\n";
 			}
-		} while (choice != 4 && loggedIn);
-		break;
-	case ADMIN:
-		do {
-			cout << "Gym Management System\n";
-			cout << "1. Display All Users\n";
-			cout << "2. Show Encrypted Data\n";
-			cout << "3. Add Trainer\n";
-			cout << "3. Back\n";
-			cout << "Enter your choice: ";
-
-			cin >> choice;
-			system("cls");
-			switch (choice) {
-			case 1:
-				displayUsers(users, userCount);
-				break;
-			case 2:
-				storePassword(table, "0");
-				storePassword(table, "1");
-				storePassword(table, "2");
-                
-				displayTable(table);
-				break;
-			case 3: {
-				system("cls");
-				int trainerID, age, experience;
-				string name, achievements, phone;
-
-				cout << "Enter Trainer ID: ";
-				cin >> trainerID;
-				cout << "Enter Full Name: ";
-				cin.ignore();
-				getline(cin, name);
-				cout << "Enter Age: ";
-				cin >> age;
-				cout << "Enter Years of Experience: ";
-				cin >> experience;
-				cout << "Enter Achievements: ";
-				cin.ignore();
-				getline(cin, achievements);
-				cout << "Enter Phone Number: ";
-				cin >> phone;
-
-
-				Trainer* newTrainer = new Trainer(trainerID, name, age, experience, achievements, phone, Schedule());
-				trainerTree.insertTrainer(newTrainer);
-
-				cout << "Trainer added successfully!\n";
-				break;
-			}
-			case 4:
-				cout << "Going Back...\n";
-				break;
-			default:
-				cout << "Invalid choice. Try again.\n";
-			}
-		} while (choice != 5);
+		} while (choice != 3);
 		break;
 	}
-}
-
-bool loginMenu(User* users, int userCount) {
-	string username, password;
-	cout << "Enter username: ";
-	cin >> username;
-	cout << "Enter password: ";
-	cin >> password;
-
-	cout << "1. Client\n";
-	cout << "2. Trainer\n";
-	cout << "3. Nutrition Specialist\n";
-	cout << "4. Admin\n";
-	cout << "Enter your choice: ";
-	int accountType;
-	cin >> accountType;
-
-
-	switch (accountType) {
-	case 1:
-		cout << "Client account created.\n";
-		for (int i = 0; i < userCount; ++i) {
-			if (users[i].username == username && users[i].password == password) {
-				if (users[i].accountType == CLIENT) {
-					activeUser = &users[i]; 
-					cout << "Login successful!\n";
-					showUserMenu(&users[i], userCount);
-					return true;
-				}
-			}
+};
+bool lsearch(User arr[], int size, int target) {
+	for (int i = 0; i < size; i++) {
+		if (arr[i].id == target) {
+			cout << target << " is in the array." << endl;
+			return true;
 		}
-		showUserMenu(users, userCount);
-		break;
-
-	case 2:
-		cout << "Trainer account created.\n";
-		for (int i = 0; i < userCount; ++i) {
-			if (users[i].username == username && users[i].password == password) {
-				if (users[i].accountType == TRAINER) {
-					activeUser = &users[i];
-					cout << "Login successful!\n";
-					showUserMenu(&users[i], userCount);
-					return true;
-				}
-			}
-		}
-		showUserMenu(users, userCount);
-		break;
-	case 3:
-		cout << "Nutrition Specialist account created.\n";
-		for (int i = 0; i < userCount; ++i) {
-			if (users[i].username == username && users[i].password == password) {
-				if (users[i].accountType == NUTRITION_SPECIALIST) {
-					activeUser = &users[i];
-					cout << "Login successful!\n";
-					showUserMenu(&users[i], userCount);
-					return true;
-				}
-			}
-		}
-		showUserMenu(users, userCount);
-		break;
-	default:
-		cout << "Invalid choice. Account not created.\n";
-		return false;
 	}
-	cout << "Invalid username or password. Try again.\n";
+	cout << target << " is not in the array." << endl;
 	return false;
 }
 
+int bSearch(int bottom, int top, int mid, int bTarget, User users[], int const userCount) {
+
+	int* arr = new int[userCount];
+
+	bool found = 0;
+	for (int i = 0; i < userCount; i++) {
+		arr[i] = users[i].id;
+	}
+	while (found == 0 && bottom <= top) {
+		mid = (top + bottom) / 2;
+		if (bTarget == arr[mid]) {
+			found = 1;
+			return mid;
+		}
+		else {
+			if (bTarget < arr[mid]) {
+				top = mid - 1;
+			}
+			else {
+				bottom = mid + 1;
+			}
+
+		}
+
+	}
+
+	if (!found) {
+		cout << "Target not found";
+	}
+}
+void bubbleSortUsersById(User users[], int userCount) {
+	for (int i = 0; i < userCount - 1; i++) {
+		for (int j = 0; j < userCount - i - 1; j++) {
+			if (users[j].id > users[j + 1].id) {
+
+				User temp = users[j];
+				users[j] = users[j + 1];
+				users[j + 1] = temp;
+			}
+		}
+	}
+}
+void showDataStructureMenu(User*& users, int& userCount) {
+	int choice;
+
+	int ID;
+	string username, password;
+	UserType type = CLIENT;
+	User dsUsers[5];
+	int searchID;
+	int foundID;
+	int count = 0;
+	int subMenuChoice1 = 0;
+	int subMenuChoice2 = 0;
+	int subMenuChoice3 = 0;
+	int subMenuChoice4 = 0;
+	int subMenuChoice5 = 0;
+	do {
+		cout << "Which Data Structure You Want To Display\n";
+		cout << "0. Add User\n";
+		cout << "1. Linked List\n";
+		cout << "2. Stack\n";
+		cout << "3. Queue\n";
+		cout << "4. Binary Search Tree\n";
+		cout << "5. Array\n";
+		cout << "6. Exit\n";
+		cout << "Enter your choice: ";
+		cin >> choice;
+		int accountType = -1;
+		switch (choice) {
+		case 0: {
+			system("cls");
+			cout << "Enter User ID: ";
+			cin >> ID;
+			cout << "Enter Username: ";
+			cin >> username;
+			cout << "Enter Password: ";
+			cin >> password;
+			cout << "Enter Account Type: \n";
+			cout << "1. Client\n";
+			cout << "2. Trainer\n";
+			cout << "3. Nutrition Specialist\n";
+			cin >> accountType;
+			switch (accountType) {
+			case 1:
+				type = CLIENT;
+				cout << "Client  Added.\n";
+				break;
+			case 2:
+				type = TRAINER;
+				cout << "Trainer Added.\n";
+				break;
+			case 3:
+				type = NUTRITION_SPECIALIST;
+				cout << "Nutrition Specialist Added.\n";
+				break;
+			default:
+				cout << "Invalid choice. Account not created.\n";
+			}
+			users[userCount] = User(username, password, ID, type);
+
+			linkedListUsers.insertAtLast(users[userCount].id);
+			stackUsers.push(users[userCount].id);
+			queueUsers.enqueue(users[userCount].id);
+			bstUsers.insertId(&users[userCount].id);
+			userCount++;
+
+			cout << "User added successfully!\n";
+			break;
+		}
+		case 1: {
+			system("cls");
+			cout << "1. Display Linked List\n";
+			cout << "2. Insert at Beginning\n";
+			cout << "3. Insert at Last\n";
+			cout << "4. Insert at Position\n";
+			cout << "5. Delete at Beginning\n";
+			cout << "6. Delete at Last\n";
+			cout << "7. Delete at Position\n";
+			cout << "8. Search\n";
+			cout << "9. Update\n";
+			cin >> subMenuChoice1;
+
+			switch (subMenuChoice1) {
+
+			case 1:
+				system("cls");
+				cout << "The IDs in Linked List\n";
+				linkedListUsers.display();
+				break;
+			case 2:
+				system("cls");
+				cout << "Enter User ID to insert at beginning: ";
+				cin >> ID;
+				linkedListUsers.insertAtFirst(ID);
+				break;
+			case 3:
+				system("cls");
+				cout << "Enter User ID to insert at last: ";
+				cin >> ID;
+				linkedListUsers.insertAtLast(ID);
+				break;
+			case 4:
+				system("cls");
+				int position;
+				cout << "Enter User ID to insert: ";
+				cin >> ID;
+				cout << "Enter position: ";
+				cin >> position;
+				linkedListUsers.insert(ID);
+				break;
+			case 5:
+				system("cls");
+				linkedListUsers.deleteAtFirst();
+				break;
+				cout << "The IDs in Linked List\n";
+				linkedListUsers.display();
+				break;
+			}
+		}
+		case 2: {
+			system("cls");
+			cout << "1. Display Stack\n";
+			cout << "2. Push\n";
+			cout << "3. Pop\n";
+			cout << "Enter your choice: ";
+			cin >> subMenuChoice2;
+			switch (subMenuChoice2) {
+			case 1:
+				system("cls");
+				cout << "The IDs in Stack\n";
+				stackUsers.display();
+				break;
+			case 2:
+				system("cls");
+				cout << "Enter User ID to push: ";
+				cin >> ID;
+				stackUsers.push(ID);
+				break;
+			case 3:
+				system("cls");
+				stackUsers.pop();
+				break;
+			}
+			break;
+		}
+		case 3: {
+			system("cls");
+			cout << "1. Display Queue\n";
+			cout << "2. Enqueue\n";
+			cout << "3. Dequeue\n";
+			cout << "Enter your choice: ";
+			cin >> subMenuChoice3;
+			switch (subMenuChoice3) {
+			case 1:
+				system("cls");
+				cout << "The IDs in Queue\n";
+				queueUsers.display();
+				break;
+			case 2:
+				system("cls");
+				cout << "Enter User ID to enqueue: ";
+				cin >> ID;
+				queueUsers.enqueue(ID);
+				break;
+			case 3:
+				system("cls");
+				queueUsers.dequeue();
+				break;
+			}
+			break;
+		}
+		case 4: {
+			system("cls");
+			cout << "1. Display Binary Search Tree\n";
+			cout << "2. Insert\n";
+			cout << "3. Search\n";
+			cout << "Enter your choice: ";
+			cin >> subMenuChoice4;
+			switch (subMenuChoice4) {
+			case 1:
+				system("cls");
+				cout << "The IDs in Binary Search Tree\n";
+				bstUsers.displayIds();
+				break;
+			case 2:
+				system("cls");
+				cout << "Enter User ID to insert: ";
+				cin >> ID;
+				bstUsers.insertId(&ID);
+				break;
+			case 3:
+				system("cls");
+				cout << "Enter User ID to search: ";
+				cin >> ID;
+				int* foundId = bstUsers.searchId(&ID);
+				if (foundId) {
+					cout << "User found with ID: " << *foundId << endl;
+				}
+				else {
+					cout << "User not found with ID: " << ID << endl;
+				}
+				break;
+			}
+			break;
+		}
+		case 5: {
+			system("cls");
+			cout << "1. Bubble Sort\n";
+			cout << "2. Binary Search\n";
+			cout << "3. Linear Search\n";
+			cout << "4. Display\n";
+			cout << "Enter your choice: ";
+			cin >> subMenuChoice5;
+			switch (subMenuChoice5) {
+			case 1:
+				system("cls");
+				bubbleSortUsersById(dsUsers, userCount);
+				cout << "Users sorted by ID\n";
+				break;
+			case 2:
+				system("cls");
+				cout << "Enter User ID to search: ";
+				cin >> searchID;
+				foundID = bSearch(0, users->id, users->id / 2, searchID, users, userCount);
+				if (foundID) {
+					cout << "User found with ID: " << foundID << endl;
+				}
+				else {
+					cout << "User not found with ID: " << searchID << endl;
+				}
+				break;
+			case 3:
+				system("cls");
+				cout << "Enter User ID to search: ";
+				cin >> searchID;
+				foundID = lsearch(dsUsers, userCount, searchID);
+				if (foundID) {
+					cout << "User found with ID: " << foundID << endl;
+				}
+				else {
+					cout << "User not found with ID: " << searchID << endl;
+				}
+				break;
+			case 4:
+				system("cls");
+				displayUsers(users, userCount);
+				break;
+			}
+			break;
+		}
+		}
+	} while (choice != 6);
+}
+
+
 void showMainMenu() {
 	cout << "Gym Management System\n";
-	cout << "1. Login\n";
-	cout << "2. Register\n";
+	cout << "1. Try Data Structures\n";
+	cout << "2. Add User\n";
 	cout << "3. Exit\n";
 	cout << "Enter your choice: ";
 }
@@ -363,47 +544,45 @@ bool registerMenu(User*& users, int& userCount) {
 		newUsers[i] = users[i];
 	}
 	system("cls");
-	cout << "Registration successful!.\n";
 
 	switch (accountType) {
 	case 1:
 		cout << "Client account created.\n";
 		
-		clientsID.insertAtLast(id);
-		newUsers[userCount] = { username, password, id, CLIENT };
+		linkedListUsers.insertAtLast(id);
+		newUsers[userCount] = User(username, password, id, CLIENT);
 		activeUser = &newUsers[userCount];
 		delete[] users;
 		users = newUsers;
 		userCount++;
 		showUserMenu(users, userCount);
-		return false;
 		break;
 
 	case 2:
 		cout << "Trainer account created.\n";
-		newUsers[userCount] = { username, password, id, TRAINER };
+		newUsers[userCount] = User(username, password, id, TRAINER);
 		activeUser = &newUsers[userCount];
 		delete[] users;
 		users = newUsers;
 		userCount++;
 		showUserMenu(users, userCount);
-		return false;
 		break;
 	case 3:
 		cout << "Nutrition Specialist account created.\n";
-		newUsers[userCount] = { username, password, id, NUTRITION_SPECIALIST };
+		newUsers[userCount] = User(username, password, id, CLIENT);
 		activeUser = &newUsers[userCount];
 		delete[] users;
 		users = newUsers;
 		userCount++;
 		showUserMenu(users, userCount);
-		return false;
 		break;
 	default:
 		cout << "Invalid choice. Account not created.\n";
 		return false;
 	}
-	loggedIn = true;
+
+	cout << "Logout Successfull\n";
+	
 }
 int main() {
 	int choice;
@@ -412,16 +591,14 @@ int main() {
     do {
 		showMainMenu();
         cin >> choice;
-		system("cls");
+		system("cls"); 
         switch (choice) {
-			case 1:
-				loginMenu(users, userCount);
-				break;
-			case 2: registerMenu(users,userCount); loggedIn = true; break;
+			case 1: showDataStructureMenu(users, userCount); break;
+			case 2: registerMenu(users,userCount); break;
             case 3: cout << "Exiting...\n"; break;
             default: cout << "Invalid choice. Try again.\n";
         }
-    } while (choice != 3 && !loggedIn);
+    } while (choice!=3);
 
     return 0;
 }

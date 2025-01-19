@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "D:\\projects\\Gym-Management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D48B9565-8443-4F6D-86E3-C101EDDDEFB0}|Gym-Management\\Gym-Management.vcxproj|D:\\projects\\Gym-Management\\Gym-Management\\nutritionSpecialist.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D48B9565-8443-4F6D-86E3-C101EDDDEFB0}|Gym-Management\\Gym-Management.vcxproj|solutionrelative:Gym-Management\\nutritionSpecialist.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D48B9565-8443-4F6D-86E3-C101EDDDEFB0}|Gym-Management\\Gym-Management.vcxproj|D:\\projects\\Gym-Management\\Gym-Management\\NutritionSpecialist.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D48B9565-8443-4F6D-86E3-C101EDDDEFB0}|Gym-Management\\Gym-Management.vcxproj|solutionrelative:Gym-Management\\NutritionSpecialist.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D48B9565-8443-4F6D-86E3-C101EDDDEFB0}|Gym-Management\\Gym-Management.vcxproj|D:\\projects\\Gym-Management\\Gym-Management\\Gym-Management.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D48B9565-8443-4F6D-86E3-C101EDDDEFB0}|Gym-Management\\Gym-Management.vcxproj|solutionrelative:Gym-Management\\Gym-Management.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D48B9565-8443-4F6D-86E3-C101EDDDEFB0}|Gym-Management\\Gym-Management.vcxproj|D:\\projects\\Gym-Management\\Gym-Management\\linkedList.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D48B9565-8443-4F6D-86E3-C101EDDDEFB0}|Gym-Management\\Gym-Management.vcxproj|solutionrelative:Gym-Management\\linkedList.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D48B9565-8443-4F6D-86E3-C101EDDDEFB0}|Gym-Management\\Gym-Management.vcxproj|D:\\projects\\Gym-Management\\Gym-Management\\hash.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D48B9565-8443-4F6D-86E3-C101EDDDEFB0}|Gym-Management\\Gym-Management.vcxproj|solutionrelative:Gym-Management\\hash.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D48B9565-8443-4F6D-86E3-C101EDDDEFB0}|Gym-Management\\Gym-Management.vcxproj|D:\\projects\\Gym-Management\\Gym-Management\\Hash.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D48B9565-8443-4F6D-86E3-C101EDDDEFB0}|Gym-Management\\Gym-Management.vcxproj|solutionrelative:Gym-Management\\Hash.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D48B9565-8443-4F6D-86E3-C101EDDDEFB0}|Gym-Management\\Gym-Management.vcxproj|D:\\projects\\Gym-Management\\Gym-Management\\searchTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D48B9565-8443-4F6D-86E3-C101EDDDEFB0}|Gym-Management\\Gym-Management.vcxproj|solutionrelative:Gym-Management\\searchTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D48B9565-8443-4F6D-86E3-C101EDDDEFB0}|Gym-Management\\Gym-Management.vcxproj|D:\\projects\\Gym-Management\\Gym-Management\\stackQueue.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D48B9565-8443-4F6D-86E3-C101EDDDEFB0}|Gym-Management\\Gym-Management.vcxproj|solutionrelative:Gym-Management\\stackQueue.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,46 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Gym-Management.cpp",
               "DocumentMoniker": "D:\\projects\\Gym-Management\\Gym-Management\\Gym-Management.cpp",
               "RelativeDocumentMoniker": "Gym-Management\\Gym-Management.cpp",
-              "ToolTip": "D:\\projects\\Gym-Management\\Gym-Management\\Gym-Management.cpp",
-              "RelativeToolTip": "Gym-Management\\Gym-Management.cpp",
-              "ViewState": "AgIAALEAAAAAAAAAAAAowMIAAAAgAAAAAAAAAA==",
+              "ToolTip": "D:\\projects\\Gym-Management\\Gym-Management\\Gym-Management.cpp*",
+              "RelativeToolTip": "Gym-Management\\Gym-Management.cpp*",
+              "ViewState": "AgIAAAUBAAAAAAAAAAAAABMBAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "OverriddenGroupName": "Gym-Management",
               "WhenOpened": "2025-01-18T00:38:19.672Z",
               "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "nutritionSpecialist.cpp",
-              "DocumentMoniker": "D:\\projects\\Gym-Management\\Gym-Management\\nutritionSpecialist.cpp",
-              "RelativeDocumentMoniker": "Gym-Management\\nutritionSpecialist.cpp",
-              "ToolTip": "D:\\projects\\Gym-Management\\Gym-Management\\nutritionSpecialist.cpp*",
-              "RelativeToolTip": "Gym-Management\\nutritionSpecialist.cpp*",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-18T09:55:29.926Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "NutritionSpecialist.h",
-              "DocumentMoniker": "D:\\projects\\Gym-Management\\Gym-Management\\NutritionSpecialist.h",
-              "RelativeDocumentMoniker": "Gym-Management\\NutritionSpecialist.h",
-              "ToolTip": "D:\\projects\\Gym-Management\\Gym-Management\\NutritionSpecialist.h",
-              "RelativeToolTip": "Gym-Management\\NutritionSpecialist.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-18T09:55:22.98Z",
               "EditorCaption": ""
             },
             {
@@ -94,63 +45,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "hash.cpp",
-              "DocumentMoniker": "D:\\projects\\Gym-Management\\Gym-Management\\hash.cpp",
-              "RelativeDocumentMoniker": "Gym-Management\\hash.cpp",
-              "ToolTip": "D:\\projects\\Gym-Management\\Gym-Management\\hash.cpp",
-              "RelativeToolTip": "Gym-Management\\hash.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-18T02:48:17.989Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Hash.h",
-              "DocumentMoniker": "D:\\projects\\Gym-Management\\Gym-Management\\Hash.h",
-              "RelativeDocumentMoniker": "Gym-Management\\Hash.h",
-              "ToolTip": "D:\\projects\\Gym-Management\\Gym-Management\\Hash.h",
-              "RelativeToolTip": "Gym-Management\\Hash.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-18T02:47:29.613Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "searchTree.cpp",
-              "DocumentMoniker": "D:\\projects\\Gym-Management\\Gym-Management\\searchTree.cpp",
-              "RelativeDocumentMoniker": "Gym-Management\\searchTree.cpp",
-              "ToolTip": "D:\\projects\\Gym-Management\\Gym-Management\\searchTree.cpp",
-              "RelativeToolTip": "Gym-Management\\searchTree.cpp",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFcAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-18T02:42:12.723Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "linkedList.cpp",
               "DocumentMoniker": "D:\\projects\\Gym-Management\\Gym-Management\\linkedList.cpp",
               "RelativeDocumentMoniker": "Gym-Management\\linkedList.cpp",
               "ToolTip": "D:\\projects\\Gym-Management\\Gym-Management\\linkedList.cpp",
               "RelativeToolTip": "Gym-Management\\linkedList.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAB0AAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-18T01:33:25.17Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "stackQueue.cpp",
-              "DocumentMoniker": "D:\\projects\\Gym-Management\\Gym-Management\\stackQueue.cpp",
-              "RelativeDocumentMoniker": "Gym-Management\\stackQueue.cpp",
-              "ToolTip": "D:\\projects\\Gym-Management\\Gym-Management\\stackQueue.cpp",
-              "RelativeToolTip": "Gym-Management\\stackQueue.cpp",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-18T01:32:14.985Z"
+              "WhenOpened": "2025-01-19T00:16:03.014Z",
+              "EditorCaption": ""
             }
           ]
         }

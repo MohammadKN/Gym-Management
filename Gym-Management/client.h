@@ -6,6 +6,8 @@
 using namespace std;
 
 
+
+
 struct market {
     float price;
     string item;

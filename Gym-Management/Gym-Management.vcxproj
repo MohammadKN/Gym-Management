@@ -132,7 +132,6 @@
     <ClCompile Include="linkedList.cpp" />
     <ClCompile Include="nutritionSpecialist.cpp" />
     <ClCompile Include="schedule.cpp" />
-    <ClCompile Include="search.cpp" />
     <ClCompile Include="searchTree.cpp" />
     <ClCompile Include="stackQueue.cpp" />
     <ClCompile Include="Gym-Management.cpp" />
@@ -144,6 +143,7 @@
     <ClInclude Include="NutritionSpecialist.h" />
     <ClInclude Include="Schedule.h" />
     <ClInclude Include="Trainer.h" />
+    <ClInclude Include="User.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

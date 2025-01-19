@@ -36,6 +36,9 @@ class Stack {
 private:
     LinkedList list;
 public:
+    Stack() {
+        list = LinkedList();
+    }
     Stack(int headVal) : list(headVal) {}
 
     void push(int val) {

@@ -1,4 +1,8 @@
-#pragma once
+#ifndef SHEDULE_H
+
+#define SHEDULE_H
+
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -30,8 +34,9 @@ public:
              Day restDays[], int numRestDays);
 
     void displaySchedule() const;
-
+	Schedule createSchedule();
     int getTrainerID();
     int getClientID();
 
 };
+#endif // !SHEDULE_H

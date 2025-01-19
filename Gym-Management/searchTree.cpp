@@ -1,44 +1,44 @@
 #pragma once
 #include <map>
 #include <iostream>
-#include "Trainer.h"
+
 using namespace std;
 
 class IDBinarySearchTree {
 private:
     struct TreeNode {
-        Trainer* trainer;
+        int* id;
         TreeNode* left;
         TreeNode* right;
 
-        TreeNode(Trainer* trainer)
-            : trainer(trainer), left(nullptr), right(nullptr) {
+        TreeNode(int* id)
+            : id(id), left(nullptr), right(nullptr) {
         }
     };
 
     TreeNode* root;
 
-    TreeNode* insertNode(TreeNode* node, Trainer* trainer) {
+    TreeNode* insertNode(TreeNode* node, int* id) {
         if (node == nullptr) {
-            return new TreeNode(trainer);
+            return new TreeNode(id);
         }
-        if (trainer->getTrainerID() < node->trainer->getTrainerID()) {
-            node->left = insertNode(node->left, trainer);
+        if (id < node->id) {
+            node->left = insertNode(node->left, id);
         }
-        else if (trainer->getTrainerID() > node->trainer->getTrainerID()) {
-            node->right = insertNode(node->right, trainer);
+        else if (id > node->id) {
+            node->right = insertNode(node->right, id);
         }
         return node;
     }
 
-    Trainer* searchNode(TreeNode* node, int id) const {
+    int* searchNode(TreeNode* node, int* id) const {
         if (node == nullptr) {
-            return nullptr; // ?????? ??? ?????
+            return nullptr;
         }
-        if (id == node->trainer->getTrainerID()) {
-            return node->trainer; // ?????? ?????
+        if (id == node->id) {
+            return node->id; 
         }
-        if (id < node->trainer->getTrainerID()) {
+        if (id < node->id) {
             return searchNode(node->left, id);
         }
         else {
@@ -49,7 +49,7 @@ private:
     void inOrderTraversal(TreeNode* node) const {
         if (node) {
             inOrderTraversal(node->left);
-            node->trainer->displayTrainerDetails();
+            cout<<node->id<<endl;
             inOrderTraversal(node->right);
         }
     }
@@ -57,12 +57,12 @@ private:
         if (node) {
             inOrderTraversal(node->left);
             inOrderTraversal(node->right);
-            node->trainer->displayTrainerDetails();
+            cout << node->id<< endl;
         }
     }
     void preOrderTraversal(TreeNode* node) const {
         if (node) {
-            node->trainer->displayTrainerDetails();
+            cout << node->id << endl;
             inOrderTraversal(node->left);
             inOrderTraversal(node->right);
         }
@@ -71,21 +71,25 @@ private:
 public:
     IDBinarySearchTree() : root(nullptr) {}
 
-    void insertTrainer(Trainer* trainer) {
-        root = insertNode(root, trainer);
+    void insertId(int* id) {
+        root = insertNode(root, id);
     }
 
-    Trainer* searchTrainer(int id) const {
+    int* searchId(int* id) const {
         return searchNode(root, id);
     }
 
-    void displayTrainers() const {
+    void displayIds() const {
         if (root == nullptr) {
-            cout << "No trainers available." << endl;
+            cout << "No ids available." << endl;
         }
         else {
-            cout << "Trainers (sorted by ID):" << endl;
+            cout << "Ids (sorted with In Order Traversal):" << endl;
             inOrderTraversal(root);
+            cout << "Ids (sorted with Post Order Traversal):" << endl;
+            postOrderTraversal(root);
+            cout << "Ids (sorted with Pre Order Traversal):" << endl;
+            preOrderTraversal(root);
         }
     }
 };

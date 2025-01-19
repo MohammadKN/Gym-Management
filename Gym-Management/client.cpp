@@ -10,7 +10,6 @@ void Client::accessDiet()
 }
 void Client::accessSchedule(Schedule schedule)
 {
-	
     cout << "Accessing schedule created by Trainer ID: " << schedule.getTrainerID() << endl;
     schedule.displaySchedule();
 }

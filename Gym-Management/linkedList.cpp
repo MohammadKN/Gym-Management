@@ -29,9 +29,7 @@ public:
 	LinkedList() {
 		head = new Node;
 		Dhead = new DNode;
-		Dhead->item = 0;
-		head->item = 0;
-		head->next = nullptr;
+		head->next = NULL;
 	}
 	bool isEmpty() {
 		if (head == NULL)
@@ -40,7 +38,7 @@ public:
 			return false;
 	}
 	void display() {
-		Node* current = head;
+		Node* current = head->next;
 
 		while (current != NULL) {
 			cout << current->item << " -> ";
@@ -51,14 +49,14 @@ public:
 	void displayD() {
 		if (Dhead == NULL) {
 			cout << "The list is empty." << endl;
-			return;  // Return early if the list is empty.
+			return; 
 		}
 
-		DNode* current = Dhead;
+		DNode* current = Dhead->next;
 		while (current != NULL) {
 			cout << current->item;
 			if (current->next != NULL) {
-				cout << " <-> ";  // Use <-> for doubly linked list display
+				cout << " <-> "; 
 			}
 			current = current->next;
 		}
