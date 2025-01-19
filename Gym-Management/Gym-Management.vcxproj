@@ -133,7 +133,6 @@
     <ClCompile Include="nutritionSpecialist.cpp" />
     <ClCompile Include="schedule.cpp" />
     <ClCompile Include="searchTree.cpp" />
-    <ClCompile Include="sort.cpp" />
     <ClCompile Include="stackQueue.cpp" />
     <ClCompile Include="Gym-Management.cpp" />
     <ClCompile Include="Trainer.cpp" />
