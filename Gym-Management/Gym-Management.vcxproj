@@ -127,23 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="client.cpp" />
+    <ClCompile Include="market.cpp" />
     <ClCompile Include="hash.cpp" />
     <ClCompile Include="linkedList.cpp" />
     <ClCompile Include="nutritionSpecialist.cpp" />
-    <ClCompile Include="schedule.cpp" />
     <ClCompile Include="searchTree.cpp" />
     <ClCompile Include="stackQueue.cpp" />
     <ClCompile Include="Gym-Management.cpp" />
-    <ClCompile Include="Trainer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="client.h" />
-    <ClInclude Include="Hash.h" />
-    <ClInclude Include="NutritionSpecialist.h" />
-    <ClInclude Include="Schedule.h" />
-    <ClInclude Include="Trainer.h" />
-    <ClInclude Include="User.h" />
+    <ClInclude Include="Market.h" />
+    <ClInclude Include="TreeNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

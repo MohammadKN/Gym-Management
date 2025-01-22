@@ -1,5 +1,8 @@
-#include"Hash.h"
+#include <iostream>
+#include <string>
+#define MAX 100 
 
+using namespace std;
 
 int Hash(const string password) {
     int hashv = 0;

@@ -27,13 +27,7 @@
     <ClCompile Include="searchTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Trainer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="schedule.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="client.cpp">
+    <ClCompile Include="market.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="hash.cpp">
@@ -44,22 +38,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="client.h">
+    <ClInclude Include="TreeNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="NutritionSpecialist.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Trainer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Schedule.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Hash.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="User.h">
+    <ClInclude Include="Market.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,53 +1,66 @@
-#include "NutritionSpecialist.h"
 #include <iostream>
-
+#include <string>
 using namespace std;
 
-NutritionSpecialist::NutritionSpecialist(string id, string fullName, int age, int experience, string achievements, string phoneNumber) {
-	this->id = id;
-	this->fullName = fullName;
-	this->age = age;
-	this->experience = experience;
-	this->achievements = achievements;
-	this->phoneNumber = phoneNumber;
+struct NutritionSpecialist {
+    string id;
+    string fullName;
+    int age;
+    int experience;
+    string achievements;
+    string phoneNumber;
+    string clientName;
+    string dietPlan;
+};
+
+NutritionSpecialist createNutritionSpecialist(string id, string fullName, int age, int experience, string achievements, string phoneNumber) {
+    NutritionSpecialist ns;
+    ns.id = id;
+    ns.fullName = fullName;
+    ns.age = age;
+    ns.experience = experience;
+    ns.achievements = achievements;
+    ns.phoneNumber = phoneNumber;
+    return ns;
 }
 
-void NutritionSpecialist::createNutritionPlan(string clientName, string goal, string dietaryRestrictions) {
-	this->clientName = clientName;
+void createNutritionPlan(NutritionSpecialist& ns, string clientName, string goal, string dietaryRestrictions) {
+    ns.clientName = clientName;
 
-	system("cls");
-	cout << "\nCreating a Nutrition Plan for " << clientName << "...\n";
-	cout << "Goal: " << goal << endl;
-	cout << "Dietary Restrictions: " << dietaryRestrictions << endl;
-	cout << "The plan will include a diet focusing on achieving the goal while respecting the dietary restrictions." << endl;
-	dietPlan = "Goal: " + goal + "\nDietary Restrictions: " + dietaryRestrictions;
+    cout << "\nCreating a Nutrition Plan for " << clientName << "...\n";
+    cout << "Goal: " << goal << endl;
+    cout << "Dietary Restrictions: " << dietaryRestrictions << endl;
+    cout << "The plan will include a diet focusing on achieving the goal while respecting the dietary restrictions." << endl;
 
-}
-void NutritionSpecialist::displayClientPlan() {
-	system("cls");
-	cout << "\nClient Plan for: " << clientName << endl;
-	cout << dietPlan << endl;
-}
-void NutritionSpecialist::displayDetails() {
-	system("cls");
-	cout << "Nutrition Specialist Details:" << endl;
-	cout << "ID: " << id << endl;
-	cout << "Full Name: " << fullName << endl;
-	cout << "Age: " << age << endl;
-	cout << "Experience: " << experience << " years" << endl;
-	cout << "Achievements: " << achievements << endl;
-	cout << "Phone Number: " << phoneNumber << endl;
+    ns.dietPlan = "Goal: " + goal + "\nDietary Restrictions: " + dietaryRestrictions;
 }
 
-void NutritionSpecialist::Goal() {
-	string clientName, goal, dietaryRestrictions;
+void displayClientPlan(const NutritionSpecialist& ns) {
+    cout << "\nClient Plan for: " << ns.clientName << endl;
+    cout << ns.dietPlan << endl;
+}
 
-	cout << "Enter client's name: ";
-	cin >> clientName;
+void displayNutritionSpecialistDetails(const NutritionSpecialist& ns) {
+    cout << "Nutrition Specialist Details:" << endl;
+    cout << "ID: " << ns.id << endl;
+    cout << "Full Name: " << ns.fullName << endl;
+    cout << "Age: " << ns.age << endl;
+    cout << "Experience: " << ns.experience << " years" << endl;
+    cout << "Achievements: " << ns.achievements << endl;
+    cout << "Phone Number: " << ns.phoneNumber << endl;
+}
 
-	cout << "Enter goal (e.g., Weight loss, Muscle gain, etc.): ";
-	cin >> goal;
+void inputGoal(NutritionSpecialist& ns) {
+    string clientName, goal, dietaryRestrictions;
 
-	cout << "Enter any dietary restrictions (if any): ";
-	cin >> dietaryRestrictions;
-}; 
+    cout << "Enter client's name: ";
+    cin >> clientName;
+
+    cout << "Enter goal (e.g., Weight loss, Muscle gain, etc.): ";
+    cin >> goal;
+
+    cout << "Enter any dietary restrictions (if any): ";
+    cin >> dietaryRestrictions;
+
+    createNutritionPlan(ns, clientName, goal, dietaryRestrictions);
+}
