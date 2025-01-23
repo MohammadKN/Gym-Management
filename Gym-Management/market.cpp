@@ -26,50 +26,6 @@ struct Schedule {
 };
 
 
-/*
-Schedule createSchedule() {
-    int trainerID, clientID, numWorkingDays, numRestDays, numExercises, duration;
-    Day workingDays[7], restDays[7];
-    string exercises[5];
-
-    cout << "Enter Trainer ID: ";
-    cin >> trainerID;
-    cout << "Enter Client ID: ";
-    cin >> clientID;
-
-    cout << "Enter number of working days: ";
-    cin >> numWorkingDays;
-    cout << "Enter working days (0 for Sunday, 1 for Monday, ..., 6 for Saturday): ";
-    for (int i = 0; i < numWorkingDays; ++i) {
-        int day;
-        cin >> day;
-        workingDays[i] = static_cast<Day>(day);
-    }
-
-    cout << "Enter number of rest days: ";
-    cin >> numRestDays;
-    cout << "Enter rest days (0 for Sunday, 1 for Monday, ..., 6 for Saturday): ";
-    for (int i = 0; i < numRestDays; ++i) {
-        int day;
-        cin >> day;
-        restDays[i] = static_cast<Day>(day);
-    }
-
-    cout << "Enter number of exercises: ";
-    cin >> numExercises;
-    cout << "Enter exercises: ";
-    for (int i = 0; i < numExercises; ++i) {
-        cin >> exercises[i];
-    }
-
-    cout << "Enter duration (in minutes): ";
-    cin >> duration;
-
-    {
-        return Schedule{ trainerID, clientID,  exercises, numExercises, duration, restDays, numRestDays ,workingDays, numWorkingDays};
-}
-}*/
-
 struct MarketItem {
     double price;
     string item;
