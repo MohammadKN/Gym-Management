@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="market.cpp" />
-    <ClCompile Include="hash.cpp" />
     <ClCompile Include="linkedList.cpp" />
     <ClCompile Include="nutritionSpecialist.cpp" />
     <ClCompile Include="searchTree.cpp" />
