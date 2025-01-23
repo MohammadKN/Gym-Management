@@ -227,7 +227,7 @@ int mainMenu() {
 	cout << "3. Marketplace\n";
 	cout << "4. Manage members by ID in Different Orders\n";
 	cout << "5. Binary Search\n";
-	cout << "6. Map Members to IDs\n";
+	cout << "6. View Encrypted Users IDs\n";
 	cout << "7. Exit\n";
 	int x;
 	cin >> x;
