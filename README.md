@@ -1,5 +1,6 @@
 Gym System
 Data Structure (2024-2025)
+
 1. Gym System
 Final Project Report for Data Structure
 Faculty of Information Technology
@@ -15,41 +16,44 @@ Dr. Hashim Jarrar
 2025
 
 2. Introduction
-This Gym System Project aims to make it easier to manage gym tasks. The system helps with the following:
+This Gym System Project. The system helps with the following:
 
 Member Management: Storing and managing member information (like name, ID, and membership details).
-Exercise Scheduling: Showing which exercises should be done each day and how many times (sets/repetitions).
-Healthy Meals: Providing healthy food options with information about price, nutrition, and serving size.
-To achieve this, we use data structures such as linked lists, stacks, queues, and binary search trees.
-These structures help us organize and handle data more efficiently. By automating common tasks, we reduce errors and save time for both gym staff and members.
+Healthy Meals: Providing healthy food options with information about price, and serving size.
+To achieve this, we use data structures such as linked lists, stacks, Binary Search, Bubble Sort, Linear Search, queues, and binary search trees.
+These structures help us organize and handle data more efficiently.
 
 3. System Design
 3.1 Main Modules
-User Management (Login & Sign Up)
+User Management (Add User, Delete User, Search for a user)
 
-Members can create new accounts or log in if they already have an account.
-Exercise Scheduling
 
-The system shows a daily or weekly workout plan.
-Each exercise has a specific number of sets and repetitions.
 Healthy Meal Service
 
-Members can view a list of healthy meals with details (price, nutrition facts, size).
+Members can view a list of healthy meals with details (price, size).
 They can buy these meals directly through the system.
 3.2 Data Structures Used
-Stack
 
+Stack:
 Could store recent user actions or track the most recent meal purchases.
-Queue
 
+
+Queue:
 Useful for a waiting list if a class or trainer is popular (first-come, first-served).
-Linked List
 
+
+Linked List:
 Can store member details or workout schedules, allowing easy insertion or deletion of records.
-Binary Search Tree (BST)
 
+Binary Search Tree (BST):
 Can store meals or members in a way that makes searching for a specific ID faster (compared to a normal list).
 (Your actual code might use different names or focus on certain structures. Feel free to modify this list.)
+
+Linear Search:
+we used it to find a specific item if it is stored or not.
+
+Binary Search:
+it can search over an array in less time compared to the linear search.
 
 4. Key Features and Operations
 Add New Member
@@ -69,5 +73,4 @@ Removes a member or meal from the data structure.
 Updates records (like changing a member’s phone number or a meal’s price).
 Check Exercise Schedule
 
-Shows which exercises to do each day and how many sets/repetitions.
 Could be stored in a linked list or array.
