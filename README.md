@@ -45,6 +45,7 @@ Useful for a waiting list if a class or trainer is popular (first-come, first-se
 Linked List:
 Can store member details or workout schedules, allowing easy insertion or deletion of records.
 
+
 Binary Search Tree (BST):
 Can store meals or members in a way that makes searching for a specific ID faster (compared to a normal list).
 (Your actual code might use different names or focus on certain structures. Feel free to modify this list.)
@@ -52,8 +53,10 @@ Can store meals or members in a way that makes searching for a specific ID faste
 Linear Search:
 we used it to find a specific item if it is stored or not.
 
+
 Binary Search:
 it can search over an array in less time compared to the linear search.
+
 
 4. Key Features and Operations
 Add New Member
@@ -71,6 +74,5 @@ Delete or Update
 
 Removes a member or meal from the data structure.
 Updates records (like changing a member’s phone number or a meal’s price).
-Check Exercise Schedule
 
 Could be stored in a linked list or array.
